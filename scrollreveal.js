@@ -1,14 +1,4 @@
-/*! @license ScrollReveal v4.0.9
 
-	Copyright 2021 Fisssion LLC.
-
-	Licensed under the GNU General Public License 3.0 for
-	compatible open source projects and non-commercial use.
-
-	For commercial sites, themes, projects, and applications,
-	keep your source code private/proprietary by purchasing
-	a commercial license from https://scrollrevealjs.org/
-*/
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
