@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./boutique.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./swiper-bundle.min.css">
-    <script src="./index.js" defer></script>
-    <script src="./script.js" defer></script>
-    <script src="./swiper-bundle.min.js" defer></script>
-    <script src="./boutique.js" defer></script>
-    <title>Panier</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./boutique.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- ===== Boxicons CSS ===== -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./swiper-bundle.min.css">
+  <script src="./index.js" defer></script>
+  <!-- <script src="./script.js" defer></script> -->
+  <!-- <script src="./swiper-bundle.min.js" defer></script> -->
+  <script src="./boutique.js" defer></script>
+  <title>Panier</title>
 </head>
 <body>
-    <h1>Panier</h1>
 
+<nav>
+  <div class="nav-bar">
+    <i class='bx bx-menu sidebarOpen'></i>
+    <span class="logo navLogo" href="#"><img src="./images/logo.png" alt="" class="logoImg"></span>
+
+    <div class="menu">
+      <div class="logo-toggle">
+        <span class="logo"><a href="#">Choco Pap</a></span>
+        <i class='bx bx-x siderbarClose'></i>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="Boutique.html">Boutique</a></li>
+        <li><a href="./panier.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+              style="fill: rgb(253, 253, 253);">
+              <path
+                d="M8.132 2.504 4.42 9H3a1.001 1.001 0 0 0-.965 1.263l2.799 10.263A2.004 2.004 0 0 0 6.764 22h10.473c.898 0 1.692-.605 1.93-1.475l2.799-10.263A.998.998 0 0 0 21 9h-1.42l-3.712-6.496-1.736.992L17.277 9H6.723l3.145-5.504-1.736-.992zM14 13h2v5h-2v-5zm-6 0h2v5H8v-5z">
+              </path>
+            </svg></a></li>
+      </ul>
+    </div>
+
+    <div class="darkLight-searchBox">
+      <div class="dark-light">
+        <i class='bx bx-moon moon'></i>
+        <i class='bx bx-sun sun'></i>
+      </div>
+
+      <div class="searchBox">
+        <div class="searchToggle">
+          <i class='bx bx-x cancel'></i>
+          <i class='bx bx-search search'></i>
+        </div>
+
+        <div class="search-field">
+          <input type="text" placeholder="Search...">
+          <i class='bx bx-search'></i>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</nav>
+
+    <h1>Panier</h1>
+<section>
     <div id="cart">
-        <h2>Contenu du panier</h2>
+        <h1>Contenu du panier</h1>
         <ul id="cart-itemsPanier">
         </ul>
         <p id="cart-total">Total: $0.00</p>
     </div>
 
     <a href="./Boutique.html">Retour à la boutique</a>
-
-    <script src="script.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            const cartItemsElement = document.getElementById('cart-itemsPanier');
-            const cartTotalElement = document.getElementById('cart-total');
-
-            // Récupérer les éléments du panier depuis le localStorage
-            const storedItems = localStorage.getItem('cartItems');
-            if (storedItems) {
-                cartItemsElement.innerHTML = storedItems;
-            }
-
-            // Récupérer le total depuis le localStorage
-            const storedTotal = localStorage.getItem('cartTotal');
-            if (storedTotal) {
-                cartTotalElement.textContent = storedTotal;
-            }
-        });
-    </script>
+</section>
+  
 
 
 <!-- Footer Section -->
