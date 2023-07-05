@@ -48,9 +48,9 @@ function filterItems(category) {
   for (let i = 0; i < items.length; i++) {
     let item = items[i];
     if (category === "all") {
-      item.style.display = "block";
+      item.style.display = "flex";
     } else if (item.dataset.category === category) {
-      item.style.display = "block";
+      item.style.display = "flex";
     } else {
       item.style.display = "none";
     }
