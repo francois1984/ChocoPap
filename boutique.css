@@ -21,7 +21,15 @@ body {
 h1 {
     text-align: center;
     color: #1F1615;
+    margin: 100px;
 }
+
+h2 {
+    color: #1F1615;
+    margin-bottom: 20px;
+}
+
+
 
 #wrapper {
     display: flex;
