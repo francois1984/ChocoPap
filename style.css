@@ -1608,6 +1608,13 @@ body {
 
 h1 {
   text-align: center;
+  color: #1F1615;
+  margin: 100px;
+}
+
+h2 {
+  color: #1F1615;
+  margin-bottom: 20px;
 }
 
 #wrapper {
@@ -1636,6 +1643,13 @@ h1 {
 
 #categories li {
   margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+li:hover{
+  background-color:#B65F28
 }
 
 #categories li a {
