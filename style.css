@@ -1828,3 +1828,7 @@ li:hover{
 .product-item {
   width: 100px;
 }
+
+#delete-all-button {
+  display: none;
+}

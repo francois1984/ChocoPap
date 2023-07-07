@@ -175,6 +175,15 @@ function removeCartItem(productName) {
   }
 }
 
+// Fonction pour supprimer tous les produits du panier avec confirmation
+function removeAllCartItems() {
+  if (confirm("Êtes-vous sûr de vouloir supprimer tous les produits du panier ?")) {
+    localStorage.removeItem("cart");
+    displayCart();
+    alert("Tous les produits ont été supprimés du panier.");
+  }
+}
+
 // Fonction pour récupérer l'image du produit par son nom
 function getProductImage(productName) {
   switch (productName) {
