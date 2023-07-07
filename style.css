@@ -23,6 +23,8 @@ p {
   color: #18191A;
 }
 
+
+
 /* ===== Colours ===== */
 :root {
   --body-color: #606869;
@@ -505,6 +507,10 @@ a.button:hover {
   border-top: 2px solid var(--text-color-light);
   
   ;
+}
+
+.footer-copyRight p {
+  color: #888682;
 }
 
 .txtCopyRight {
@@ -1780,6 +1786,17 @@ li:hover{
 .cart-item button:hover {
   background-color: #d32f2f;
 }
+
+#cart-items li {
+  background-color: #6122057a;
+  box-shadow: 5px 5px 5px 5px #606869;
+}
+
+#cart-total {
+  margin: 40px;
+}
+
+
 
 .produitImg {
   width: 100%;

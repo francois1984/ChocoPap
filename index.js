@@ -44,7 +44,7 @@ body.addEventListener("click", (e) => {
   }
 });
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".mySwiper",{
   slidesPerView: 1,
   loop: true,
   pagination: {

@@ -1,4 +1,4 @@
-// Swiper js,
+/// Swiper js
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   // grabCursor: true,

@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#cart {
+    margin-top: 20px;
+}
+
+#cart-itemsPanier {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-total {
+    text-align: right;
+    font-weight: bold;
+}
