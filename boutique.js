@@ -41,7 +41,6 @@ function filterItems(category) {
   }
 }
 
-
 // Panier.js
 
 // Fonction pour afficher le contenu du panier
@@ -66,7 +65,24 @@ function displayCart() {
     for (let i = 0; i < cart.length; i++) {
       const productName = cart[i];
       const listItem = document.createElement("li");
-      listItem.textContent = productName;
+
+      // Créer une div pour contenir l'image et le nom du produit
+      const productDiv = document.createElement("div");
+      productDiv.classList.add("product-item");
+
+      // Créer une balise img pour afficher l'image du produit
+      const image = document.createElement("img");
+      image.src = getProductImage(productName);
+      image.alt = productName;
+      productDiv.appendChild(image);
+
+      // Créer un span pour afficher le nom du produit
+      const nameSpan = document.createElement("span");
+      nameSpan.textContent = productName;
+      productDiv.appendChild(nameSpan);
+
+      // Ajouter la div du produit à l'élément de liste
+      listItem.appendChild(productDiv);
 
       // Créer un bouton de suppression pour chaque élément du panier
       const deleteButton = document.createElement("button");
@@ -155,6 +171,28 @@ function removeCartItem(productName) {
       // Afficher un message de confirmation
       alert("Le produit a été supprimé du panier.");
     }
+  }
+}
+
+// Fonction pour récupérer l'image du produit par son nom
+function getProductImage(productName) {
+  switch (productName) {
+    case "Chocolat blanc":
+      return "./images/produit1.jpg";
+    case "Chocolat au lait":
+      return "./images/produit2.jpg";
+    case "Chocolat noir":
+      return "./images/produit3.jpg";
+    case "Noix/Noisette":
+      return "./images/produit4.jpg";
+    case "Fruit":
+      return "./images/produit5.jpg";
+    case "Caramel":
+      return "./images/produit6.jpg";
+    case "Liqueur":
+      return "./images/produit7.jpg";
+    default:
+      return "";
   }
 }
 
