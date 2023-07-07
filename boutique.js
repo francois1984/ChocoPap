@@ -87,6 +87,7 @@ function displayCart() {
       // Créer un bouton de suppression pour chaque élément du panier
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Supprimer";
+      deleteButton.classList.add("delete-button");
       deleteButton.addEventListener("click", function () {
         confirmRemoveCartItem(productName);
       });
