@@ -21,7 +21,7 @@ function addToCart(productName) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // Afficher un message de confirmation
-  alert("Le produit a été ajouté au panier.");
+//   alert("Le produit a été ajouté au panier.");
 }
 
 // Fonction pour filtrer les produits par catégorie
