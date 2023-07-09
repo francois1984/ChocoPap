@@ -1797,6 +1797,12 @@ li:hover{
 
 }
 
+#cart-items p {
+  text-align: center;
+  font-size: xx-large;
+  color: white;
+}
+
 #cart-total {
   margin: 40px;
 }
@@ -1851,16 +1857,17 @@ li:hover{
 }
 
 .mainSection a {
-
   margin: 20px;
   color: #FFFFFF;
   border-radius: 5px;
-  background-color: #B65F28;
+  background-color: #b65f28;
+  cursor: pointer;
 }
 
 .mainSection a:hover {
   background-color: #db4f0e;
 }
+
 
 #cart h1 {
   margin: 70px;
@@ -1878,4 +1885,16 @@ li:hover{
   border-radius: 5px;
   background-color: #f8f9fa;
   text-align: center;
+}
+
+#bouton {
+  margin: 20px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    background-color: #b65f28;
+    cursor: pointer;
+}
+
+#bouton:hover {
+  background-color: #f05e0a;
 }

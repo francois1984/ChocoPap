@@ -35,14 +35,14 @@
                 <ul class="nav-links">
                 <li><a href="./index.html">Accueil</a></li>
                 <li><a href="Boutique.html">Boutique</a></li>
-                <li><a href="./panier.html">
+                <li><a id="cart-link"  href="./panier.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
                         style="fill: rgb(253, 253, 253);">
                         <path
                         d="M8.132 2.504 4.42 9H3a1.001 1.001 0 0 0-.965 1.263l2.799 10.263A2.004 2.004 0 0 0 6.764 22h10.473c.898 0 1.692-.605 1.93-1.475l2.799-10.263A.998.998 0 0 0 21 9h-1.42l-3.712-6.496-1.736.992L17.277 9H6.723l3.145-5.504-1.736-.992zM14 13h2v5h-2v-5zm-6 0h2v5H8v-5z">
                         </path>
                         </svg>
-                    <span id="cart-count" class="cart-count"></span>
+                        <span id="cart-count"></span>
                     </a>
                 </li>
                 </ul>
@@ -77,14 +77,14 @@
             <div id="categories">
                 <h2>Catégories</h2>
                 <ul>
-                    <li><a href="#" onclick="filterItems('all')">Tous</a></li>
-                    <li><a href="#" onclick="filterItems('chocolat-blanc')">Chocolat blanc</a></li>
-                    <li><a href="#" onclick="filterItems('chocolat-lait')">Chocolat au lait</a></li>
-                    <li><a href="#" onclick="filterItems('chocolat-noir')">Chocolat noir</a></li>
-                    <li><a href="#" onclick="filterItems('noix-noisette')">Noix/Noisette</a></li>
-                    <li><a href="#" onclick="filterItems('fruit')">Fruit</a></li>
-                    <li><a href="#" onclick="filterItems('caramel')">Caramel</a></li>
-                    <li><a href="#" onclick="filterItems('liqueur')">Liqueur</a></li>
+                    <li onclick="filterItems('all')"><a href="#" >Tous</a></li>
+                    <li onclick="filterItems('chocolat-blanc')"><a href="#" >Chocolat blanc</a></li>
+                    <li onclick="filterItems('chocolat-lait')"><a href="#" >Chocolat au lait</a></li>
+                    <li onclick="filterItems('chocolat-noir')"><a href="#" >Chocolat noir</a></li>
+                    <li onclick="filterItems('noix-noisette')"><a href="#" >Noix/Noisette</a></li>
+                    <li onclick="filterItems('fruit')"><a href="#" >Fruit</a></li>
+                    <li onclick="filterItems('caramel')"><a href="#" >Caramel</a></li>
+                    <li onclick="filterItems('liqueur')"><a href="#" >Liqueur</a></li>
                 </ul>
             </div>
         
@@ -133,8 +133,9 @@
                 </div>
             </div>
         </div>
+        <a id="bouton" href="./panier.html">Voir le panier</a>
     </section>
-    <a href="./panier.html">Voir le panier</a>
+   
 
 
         <!-- Footer Section -->
@@ -195,7 +196,32 @@
           <a href="./index.html" class="scrollUp-btn flex">
             <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
           </a>
-    
+    <script>
+      // Fonction pour mettre à jour la bulle du panier avec le nombre de produits
+        function updateCartCount() {
+          // Récupérer le panier depuis le stockage local
+          let cart = localStorage.getItem("cart");
+
+          // Vérifier si le panier est vide
+          if (!cart) {
+            // Si le panier est vide, cacher la bulle
+            const cartCountElement = document.getElementById("cart-count");
+            cartCountElement.style.display = "none";
+          } else {
+            // Si le panier n'est pas vide, convertir le JSON en tableau
+            cart = JSON.parse(cart);
+
+            // Mettre à jour le nombre de produits dans la bulle du panier
+            const cartCountElement = document.getElementById("cart-count");
+            cartCountElement.textContent = cart.length;
+            cartCountElement.style.display = "inline-block";
+          }
+        }
+
+        // Appeler la fonction pour mettre à jour la bulle du panier au chargement de la page
+        updateCartCount();
+
+    </script>
 
 </body>
 </html>

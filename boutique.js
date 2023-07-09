@@ -21,8 +21,13 @@ function addToCart(productName) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // Afficher un message de confirmation
-//   alert("Le produit a été ajouté au panier.");
+  //   alert("Le produit a été ajouté au panier.");
+
+  // Mettre à jour la bulle du panier
+  updateCartCount();
 }
+
+    
 
 // Fonction pour filtrer les produits par catégorie
 function filterItems(category) {
@@ -34,7 +39,7 @@ function filterItems(category) {
     const item = items[i];
 
     if (category === "all" || item.getAttribute("data-category") === category) {
-      item.style.display = "block";
+      item.style.display = "flex";
     } else {
       item.style.display = "none";
     }
@@ -166,6 +171,9 @@ function removeCartItem(productName) {
       // Enregistrer le panier mis à jour dans le stockage local
       localStorage.setItem("cart", JSON.stringify(cart));
 
+      // Mettre à jour la bulle du panier
+      updateCartCount();
+
       // Réafficher le contenu du panier
       displayCart();
 
@@ -208,3 +216,31 @@ function getProductImage(productName) {
 
 // Appeler la fonction d'affichage du panier au chargement de la page
 displayCart();
+
+
+
+
+
+// Fonction pour mettre à jour la bulle du panier avec le nombre de produits
+function updateCartCount() {
+  // Récupérer le panier depuis le stockage local
+  let cart = localStorage.getItem("cart");
+
+  // Vérifier si le panier est vide
+  if (!cart) {
+    // Si le panier est vide, cacher la bulle
+    const cartCountElement = document.getElementById("cart-count");
+    cartCountElement.style.display = "none";
+  } else {
+    // Si le panier n'est pas vide, convertir le JSON en tableau
+    cart = JSON.parse(cart);
+
+    // Mettre à jour le nombre de produits dans la bulle du panier
+    const cartCountElement = document.getElementById("cart-count");
+    cartCountElement.textContent = cart.length;
+    cartCountElement.style.display = "inline-block";
+  }
+}
+
+// Appeler la fonction pour mettre à jour la bulle du panier au chargement de la page
+updateCartCount();
