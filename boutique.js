@@ -14,6 +14,12 @@ function addToCart(productName) {
     cart = JSON.parse(cart);
   }
 
+  // Ajouter le produit au panier sous forme d'objet contenant le nom et le prix
+  const product = {
+    name: productName,
+    price: getProductPrice(productName),
+  };
+
   // Ajouter le nom du produit au panier
   cart.push(productName);
 
@@ -44,6 +50,22 @@ function filterItems(category) {
       item.style.display = "none";
     }
   }
+}
+
+
+// Fonction pour récupérer le prix d'un produit par son nom
+function getProductPrice(productName) {
+  const items = document.getElementsByClassName("item");
+
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+
+    if (item.textContent === productName) {
+      return parseFloat(item.getAttribute("data-price"));
+    }
+  }
+
+  return 0;
 }
 
 // Panier.js
@@ -127,6 +149,7 @@ function calculateTotal(cart) {
 
   return total;
 }
+
 
 // Fonction pour récupérer un produit par son nom
 function getItemByName(productName) {
